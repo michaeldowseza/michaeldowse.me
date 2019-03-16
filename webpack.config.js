@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   module: {
@@ -22,7 +23,11 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
-      favicon: 'src/images/favicon.ico'
-    })
+      favicon: 'src/favicon.ico'
+    }),
+    new CopyWebpackPlugin([{
+      from: 'src/images',
+      to: 'images'
+    }]),
   ]
 }

@@ -2,12 +2,53 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52159559-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-52159559-4');
+  </script>
+
+  <title>Michael Dowse • Full-stack web developer.</title>
+
+  <!-- Meta Tags-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Michael Dowse</title>
+  <meta name="description" content="Portfolio site for Michael Dowse: Full-stack web developer.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Tags-->
+  <meta property="og:title" content="Michael Dowse • Full-stack web developer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Portfolio site for Michael Dowse: Full-stack web developer." />
+  <meta property="og:url" content="https://michaeldowse.me/" />
+  <meta property="og:site_name" content="Michael Dowse" />
+
+  <meta property="og:image" content="https://michaeldowse.me/images/manifest/tile.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Tile icon for Michael Dowse portfolio website" />
+
+  <!-- Twitter Tags-->
+  <meta name="twitter:title" content="Michael Dowse • Full-stack web developer." />
+  <meta name="twitter:description" content="Portfolio site for Michael Dowse: Full-stack web developer." />
+  <meta name="twitter:url" content="https://michaeldowse.me/" />
+  <meta name="twitter:site" content="@michaeldowseza" />
+  <meta name="twitter:creator" content="@michaeldowseza" />
+  <meta name="twitter:image" content="https://michaeldowse.me/images/manifest/tile.jpg">
+
+  <link rel="canonical" href="https://michaeldowse.me/" />
+
   <link rel="shortcut icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
   <style>
     body,
     html {
@@ -16,6 +57,7 @@
       height: 100%;
       width: 100%;
       scroll-behavior: smooth;
+      font-size: 12px;
     }
 
     main {
@@ -43,6 +85,7 @@
 
     .hero__primary-text {
       text-align: center;
+      padding: 24px;
     }
 
     .hero__primary-text h2 {
@@ -68,6 +111,12 @@
     .hero__primary-text svg:hover {
       cursor: pointer;
       fill: #ffffff;
+    }
+
+    @media(min-width: 640px) {
+      body {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
