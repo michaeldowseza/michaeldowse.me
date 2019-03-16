@@ -26,8 +26,13 @@ module.exports = {
       favicon: 'src/favicon.ico'
     }),
     new CopyWebpackPlugin([{
-      from: 'src/images',
-      to: 'images'
-    }]),
+        from: 'src/images',
+        to: 'images'
+      },
+      {
+        from: 'src/manifest.json',
+        to: 'manifest.json'
+      }
+    ]),
   ]
 }
