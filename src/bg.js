@@ -94,6 +94,10 @@ class Circle {
     this.pos.y -= this.velocity;
     this.alpha -= 0.0005;
 
+    if (this.pos.y < screenHeight / 2) {
+      this.alpha -= 0.01;
+    }
+
     if (this.isMouseOver(mouseX, mouseY)) {
       this.alpha += 0.05;
     }
