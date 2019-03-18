@@ -100,6 +100,7 @@ class Circle {
 
     if (this.isMouseOver(mouseX, mouseY)) {
       this.alpha += 0.05;
+      this.alpha = Math.min(this.alpha, 1);
     }
 
     ctx.beginPath();
