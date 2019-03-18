@@ -6,6 +6,13 @@ class Background {
   init() {
     // Init Canvas
     this.canvas = this.getCanvas();
+    this.canvas.onmousemove = e => {
+      const rect = e.target.getBoundingClientRect();
+
+      this.mouseX = e.clientX - rect.left;
+      this.mouseY = e.clientY - rect.top;
+    };
+
     this.resize();
     this.scroll();
 
@@ -42,7 +49,7 @@ class Background {
     if (this.isAnimating) {
       this.ctx.clearRect(0, 0, this.width, this.height);
       this.circles.forEach(circle => {
-        circle.render(this.ctx, this.width, this.height);
+        circle.render(this.ctx, this.width, this.height, this.mouseX, this.mouseY);
       });
     }
 
@@ -66,13 +73,30 @@ class Circle {
     this.velocity = Math.random();
   }
 
-  render(ctx, screenWidth, screenHeight) {
+  isMouseOver(mouseX, mouseY) {
+    const sensitivity = 20;
+
+    return (
+      this._inRange(this.pos.x, this.pos.x, mouseX, sensitivity) &&
+      this._inRange(this.pos.y, this.pos.y, mouseY, sensitivity)
+    );
+  }
+
+  _inRange(lower, upper, value, sensitivity) {
+    return lower - sensitivity <= value && upper + sensitivity >= value;
+  }
+
+  render(ctx, screenWidth, screenHeight, mouseX, mouseY) {
     if (this.alpha <= 0) {
       this.init(screenWidth, screenHeight);
     }
 
     this.pos.y -= this.velocity;
     this.alpha -= 0.0005;
+
+    if (this.isMouseOver(mouseX, mouseY)) {
+      this.alpha += 0.05;
+    }
 
     ctx.beginPath();
     ctx.arc(this.pos.x, this.pos.y, this.scale * 10, 0, 2 * Math.PI, false);
