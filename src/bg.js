@@ -20,7 +20,7 @@ class Background {
 
     // Init particles
     this.circles = [];
-    for (let x = 0; x < this.width * 0.5; x++) {
+    for (let x = 0; x < Math.min(this.width * 0.5, 500); x++) {
       const circle = new Circle();
       circle.init(this.width, this.height);
 
