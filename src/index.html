@@ -98,10 +98,11 @@
       main {
         height: 100%;
         width: 100%;
+        z-index: 1;
       }
 
       .highlight-color {
-        color: #d81b60;
+        color: #42a5f5;
       }
 
       section {
@@ -152,6 +153,27 @@
 
       canvas {
         position: absolute;
+        pointer-events: none;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 12px;
+        display: flex;
+      }
+
+      li a {
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 12px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        cursor: pointer;
+        color: #42a5f5;
       }
 
       @media (min-width: 640px) {
@@ -163,13 +185,22 @@
   </head>
 
   <body>
+    <canvas id="hero-canvas"></canvas>
     <main>
       <section class="hero">
-        <canvas id="hero-canvas"></canvas>
         <div class="hero__primary-text">
           <h2>Michael Dowse</h2>
           <h3>Full-stack web <span class="highlight-color">developer</span>.</h3>
         </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/michael.dowse/" target="_blank">Instagram</a>
+            </li>
+            <li><a href="https://twitter.com/michaeldowseza" target="_blank">Twitter</a></li>
+            <li><a href="https://github.com/michaeldowseza" target="_blank">Github</a></li>
+          </ul>
+        </nav>
       </section>
     </main>
   </body>
