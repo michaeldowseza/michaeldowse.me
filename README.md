@@ -2,10 +2,10 @@
 
 ## Build
 ```bash
-npm run build
+yarn build
 ```
 
 ## Deploy
 ```bash
-npm run deploy
+yarn deploy
 ```
